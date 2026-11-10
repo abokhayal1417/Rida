@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --color-ink: #1c2321;
+  --color-muted: #5e6b66;
+  --color-line: #e3e0d8;
+  --color-paper: #faf8f3;
+  --color-card: #ffffff;
+  --color-brand: #0f5c4d;
+  --color-brand-soft: #e3efe9;
+  --color-amber: #a8650a;
+  --color-amber-soft: #fbf0dc;
+  --color-danger: #a3322a;
+  --color-danger-soft: #f8e4e1;
+}
+
+html { background: var(--color-paper); color: var(--color-ink); }
+body { min-height: 100dvh; }
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition
+         disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+}
+@utility btn-primary { @apply btn bg-brand text-white hover:bg-[#0b4a3e]; }
+@utility btn-ghost { @apply btn border border-line bg-card text-ink hover:bg-paper; }
+@utility btn-danger { @apply btn bg-danger text-white hover:opacity-90; }
+@utility field { @apply w-full rounded-lg border border-line bg-card px-3 py-2.5 text-base focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20; }
+@utility label { @apply mb-1.5 block text-sm font-semibold text-ink; }
+@utility card { @apply rounded-2xl border border-line bg-card p-5 sm:p-6; }
